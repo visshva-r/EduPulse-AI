@@ -8,7 +8,7 @@ https://github.com/visshva-r/EduPulse-AI
 
 ## Live demo
 
-https://edupulse-eight-wine.vercel.app
+https://edupulse-visshva.vercel.app
 
 ## Quick start
 
