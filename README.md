@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EduPulse AI — Round 3 Prototype
 
-## Getting Started
+AI early-warning and intervention copilot for School ERPs (PRASUNEX Innovathon 2026).
 
-First, run the development server:
+## Repository
+
+https://github.com/visshva-r/EduPulse-AI
+
+## Live demo
+
+Run locally (see Quick start) or deploy to Vercel from this repo.
+
+## Quick start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Demo path (for video)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Home** — KPIs and four portals  
+2. **Admin** — cohort risk heatmap + intervention coverage  
+3. **Teacher** — pick a flagged student → read explainable reasons → **Approve & notify parent**  
+4. **Parent** — select same child → English + Hindi alert  
+5. **Student** — catch-up tasks with progress  
 
-## Learn More
+## Implemented features
 
-To learn more about Next.js, take a look at the following resources:
+- Explainable weekly risk scoring from attendance, marks, homework trends  
+- Teacher action cards (copilot-style templates) with approve / dismiss  
+- Human-in-the-loop: parent sees alert only after teacher approval  
+- Admin Recharts heatmap by grade-section  
+- Multilingual parent messages (EN + HI)  
+- Student catch-up checklist  
+- Admin insight assistant (preset natural-language queries)  
+- Demo reset control for clean recordings  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Limitations (prototype)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Rule-based risk engine (production path: XGBoost + SHAP per Round 2 design)  
+- Synthetic in-memory cohort (no live PRASUNEX ERP connection yet)  
+- Intervention text uses structured templates (LLM API planned)  
+- Auth is demo-only (role portals via navigation)  
 
-## Deploy on Vercel
+## Tech stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js 16, TypeScript, Tailwind CSS, Recharts, localStorage for intervention state.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Repository
+
+Push this folder to GitHub and paste the public URL in your Round 3 submission PDF.
+
+## Future work
+
+PostgreSQL multi-tenant backend, FastAPI scoring jobs, Gemini copilot with guardrails, WhatsApp Business API, PRASUNEX OAuth embedding.
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for alignment with Round 2 design.
